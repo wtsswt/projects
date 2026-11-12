@@ -18,7 +18,6 @@
     --line-strong:#cfcfc7;
     --accent:#0f8f86;
     --accent-ink:#0a6b64;
-    --accent-soft:#e8f5f3;
     --sans:"Inter",system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
     --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,"Liberation Mono",monospace;
     --r:10px;
@@ -126,21 +125,11 @@
     box-shadow:0 6px 22px -14px rgba(20,23,26,.35);
     transform:translateY(-2px);
   }
-  .card-top{
-    display:flex;align-items:center;justify-content:space-between;gap:10px;
-    margin-bottom:clamp(14px,1.8vw,18px);
-  }
-  .idx{
-    font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
-    color:var(--faint);
-  }
   .cat{
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    margin:0 0 7px;
+    font-size:11px;
+    letter-spacing:.14em;
     color:var(--accent-ink);
-    background:var(--accent-soft);
-    border-radius:999px;
-    padding:4px 9px;
-    white-space:nowrap;
   }
   .card h2{
     margin:0;
@@ -223,7 +212,7 @@
   <section class="grid" id="grid" aria-live="polite">
 
     <article class="card" data-cat="math">
-      <div class="card-top"><span class="idx">01</span><span class="cat">数学</span></div>
+      <p class="cat">数学</p>
       <h2>泰勒逼近</h2>
       <p class="en">Taylor Lab</p>
       <p class="desc">六个基本展开、任意展开点与 0—80 阶，误差面板与收敛半径同步标出。</p>
@@ -234,7 +223,7 @@
     </article>
 
     <article class="card" data-cat="math">
-      <div class="card-top"><span class="idx">02</span><span class="cat">数学</span></div>
+      <p class="cat">数学</p>
       <h2>高等数学必背手册</h2>
       <p class="en">Calculus Cheatsheet</p>
       <p class="desc">六章 47 张卡片、347 条公式，可搜索、可自测、可按 A4 双栏打印。</p>
@@ -245,7 +234,7 @@
     </article>
 
     <article class="card" data-cat="graph">
-      <div class="card-top"><span class="idx">03</span><span class="cat">图形</span></div>
+      <p class="cat">图形</p>
       <h2>元球液体</h2>
       <p class="en">Metaball Liquid</p>
       <p class="desc">可拖动的 WebGL 元球液体：浓度场叠加，再用一条阈值线切出边缘。</p>
@@ -256,7 +245,7 @@
     </article>
 
     <article class="card" data-cat="graph">
-      <div class="card-top"><span class="idx">04</span><span class="cat">图形</span></div>
+      <p class="cat">图形</p>
       <h2>截面实验室</h2>
       <p class="en">Section Lab</p>
       <p class="desc">用平面切立体，实时给出截面真形与截交线类型，可导出三视图。</p>
@@ -267,7 +256,7 @@
     </article>
 
     <article class="card" data-cat="sim">
-      <div class="card-top"><span class="idx">05</span><span class="cat">仿真</span></div>
+      <p class="cat">仿真</p>
       <h2>Verlet 沙盒</h2>
       <p class="en">Verlet Sandbox</p>
       <p class="desc">位置级约束求解的粒子沙盒：四种模式、五种鼠标工具。</p>
@@ -278,7 +267,7 @@
     </article>
 
     <article class="card" data-cat="tools">
-      <div class="card-top"><span class="idx">06</span><span class="cat">工具</span></div>
+      <p class="cat">工具</p>
       <h2>体测成绩计算器</h2>
       <p class="en">PE Score Calculator</p>
       <p class="desc">国家体质标准与北京中考两套评分表，录入单项成绩即得总分与等级。</p>
@@ -289,7 +278,7 @@
     </article>
 
     <article class="card" data-cat="tools">
-      <div class="card-top"><span class="idx">07</span><span class="cat">工具</span></div>
+      <p class="cat">工具</p>
       <h2>身体运动功能课程成绩计算器</h2>
       <p class="en">CAU PE Course Calculator</p>
       <p class="desc">中国农业大学 2026—2027 秋季学期体育课程五部分算分，含不及格红线提示。</p>
@@ -300,7 +289,7 @@
     </article>
 
     <article class="card" data-cat="tools">
-      <div class="card-top"><span class="idx">08</span><span class="cat">工具</span></div>
+      <p class="cat">工具</p>
       <h2>座位轮换脚本</h2>
       <p class="en">Seats Rotation 50 / 51</p>
       <p class="desc">两套教室布局的 Excel 座位轮换脚本，一次生成 100 轮。</p>

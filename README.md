@@ -15,16 +15,16 @@ wtsswt 的公开项目总览页：按类别列出全部公开仓库，每个项�
 
 ## 收录项目
 
-| # | 项目 | 类别 | 在线页面 |
-| --- | --- | --- | --- |
-| 01 | [taylor-lab](https://github.com/wtsswt/taylor-lab) | 数学 | [打开](https://wtsswt.github.io/taylor-lab/) |
-| 02 | [calculus-cheatsheet](https://github.com/wtsswt/calculus-cheatsheet) | 数学 | [打开](https://wtsswt.github.io/calculus-cheatsheet/) |
-| 03 | [metaball-liquid](https://github.com/wtsswt/metaball-liquid) | 图形 | [打开](https://wtsswt.github.io/metaball-liquid/) |
-| 04 | [section-lab](https://github.com/wtsswt/section-lab) | 图形 | [打开](https://wtsswt.github.io/section-lab/) |
-| 05 | [verlet-sandbox](https://github.com/wtsswt/verlet-sandbox) | 仿真 | [打开](https://wtsswt.github.io/verlet-sandbox/) |
-| 06 | [pe-score-calculator](https://github.com/wtsswt/pe-score-calculator) | 工具 | [打开](https://wtsswt.github.io/pe-score-calculator/) |
-| 07 | [cau-freshman-pe-score-calculator](https://github.com/wtsswt/cau-freshman-pe-score-calculator) | 工具 | [打开](https://wtsswt.github.io/cau-freshman-pe-score-calculator/) |
-| 08 | [seats-rotation-50-51](https://github.com/wtsswt/seats-rotation-50-51) | 工具 | — |
+| 项目 | 类别 | 在线页面 |
+| --- | --- | --- |
+| [taylor-lab](https://github.com/wtsswt/taylor-lab) | 数学 | [打开](https://wtsswt.github.io/taylor-lab/) |
+| [calculus-cheatsheet](https://github.com/wtsswt/calculus-cheatsheet) | 数学 | [打开](https://wtsswt.github.io/calculus-cheatsheet/) |
+| [metaball-liquid](https://github.com/wtsswt/metaball-liquid) | 图形 | [打开](https://wtsswt.github.io/metaball-liquid/) |
+| [section-lab](https://github.com/wtsswt/section-lab) | 图形 | [打开](https://wtsswt.github.io/section-lab/) |
+| [verlet-sandbox](https://github.com/wtsswt/verlet-sandbox) | 仿真 | [打开](https://wtsswt.github.io/verlet-sandbox/) |
+| [pe-score-calculator](https://github.com/wtsswt/pe-score-calculator) | 工具 | [打开](https://wtsswt.github.io/pe-score-calculator/) |
+| [cau-freshman-pe-score-calculator](https://github.com/wtsswt/cau-freshman-pe-score-calculator) | 工具 | [打开](https://wtsswt.github.io/cau-freshman-pe-score-calculator/) |
+| [seats-rotation-50-51](https://github.com/wtsswt/seats-rotation-50-51) | 工具 | — |
 
 新增项目时，在 `index.html` 的 `.grid` 里追加一个 `<article class="card">`，同步更新筛选按钮上的数量与上表。
 
