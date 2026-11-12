@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>公开项目 · wtsswt</title>
-<meta name="description" content="wtsswt 的公开项目索引：数学可视化、图形与仿真实验、课程与成绩计算工具。全部单文件、零依赖。">
+<meta name="description" content="wtsswt 的公开项目索引。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f8f86'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23fff' text-anchor='middle'%3Ew%3C/text%3E%3C/svg%3E">
 <style>
   :root{
@@ -51,6 +51,8 @@
     margin-bottom:clamp(20px,3.4vw,36px);
   }
   .meta .bar{flex:1;height:1px;background:var(--line-strong)}
+  .meta a{color:var(--faint);text-decoration:none;border-bottom:1px solid transparent}
+  .meta a:hover{color:var(--ink-2);border-bottom-color:var(--line-strong)}
   h1{
     margin:0;
     font-size:clamp(2.05rem,5vw + .55rem,3.5rem);
@@ -68,16 +70,9 @@
     letter-spacing:.26em;
     color:var(--faint);
   }
-  .lede{
-    margin:clamp(16px,2.2vw,22px) 0 0;
-    max-width:56ch;
-    color:var(--ink-2);
-    font-size:clamp(14.5px,.5vw + 13.4px,17px);
-    line-height:1.72;
-  }
   .stats{
     display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;
-    margin-top:clamp(20px,2.6vw,26px);
+    margin-top:clamp(16px,2.2vw,22px);
     font-family:var(--mono);font-size:12px;letter-spacing:.04em;
     color:var(--faint);
   }
@@ -193,17 +188,6 @@
     padding-bottom:env(safe-area-inset-bottom);
     border-top:1px solid var(--line);
   }
-  .foot .note{
-    margin:0 0 10px;
-    font-size:13px;
-    color:var(--ink-2);
-  }
-  .foot .note a{
-    color:var(--accent-ink);
-    text-decoration:none;
-    border-bottom:1px solid rgba(15,143,134,.32);
-  }
-  .foot .note a:hover{border-bottom-color:var(--accent)}
   .sign{
     margin:0;
     font-size:12px;
@@ -220,14 +204,11 @@
 <main class="wrap">
 
   <header class="masthead">
-    <div class="meta"><span>Index</span><span class="bar"></span><span>2026</span></div>
+    <div class="meta"><span>Index</span><span class="bar"></span><a href="https://github.com/wtsswt?tab=repositories">GitHub @wtsswt</a></div>
     <h1>公开项目<span class="en">Public Projects</span></h1>
-    <p class="lede">数学可视化、图形与仿真实验、课程与成绩计算工具。每个项目都是单文件网页或独立脚本，零依赖、无构建，双击就能跑，断网照常使用。</p>
     <div class="stats">
       <span><b>8</b> 个项目</span><span class="dot"></span>
-      <span><b>7</b> 个在线可用</span><span class="dot"></span>
-      <span>全部零依赖</span><span class="dot"></span>
-      <span>最近更新 2026-11-12</span>
+      <span><b>7</b> 个在线可用</span>
     </div>
   </header>
 
@@ -245,7 +226,7 @@
       <div class="card-top"><span class="idx">01</span><span class="cat">数学</span></div>
       <h2>泰勒逼近</h2>
       <p class="en">Taylor Lab</p>
-      <p class="desc">六个基本展开、任意展开点与 0—80 阶。对数刻度的误差面板把「展开点处最小、向外指数增长」画出来，收敛半径在边界上标好。当前配置写进链接，翻车现场可以直接发给别人。</p>
+      <p class="desc">六个基本展开、任意展开点与 0—80 阶，误差面板与收敛半径同步标出。</p>
       <div class="links">
         <a class="btn primary" href="https://wtsswt.github.io/taylor-lab/">打开页面<span class="arw">↗</span></a>
         <a class="btn ghost" href="https://github.com/wtsswt/taylor-lab" aria-label="泰勒逼近 源代码">源码</a>
@@ -256,7 +237,7 @@
       <div class="card-top"><span class="idx">02</span><span class="cat">数学</span></div>
       <h2>高等数学必背手册</h2>
       <p class="en">Calculus Cheatsheet</p>
-      <p class="desc">六章 47 张卡片、347 条公式：极限与无穷小、导数与微分、泰勒公式、不定积分、三角公式全表。按 <span style="font-family:var(--mono)">/</span> 搜索定位，自测模式把公式全部模糊、点击逐条揭示，⌘P 按 A4 双栏打印。</p>
+      <p class="desc">六章 47 张卡片、347 条公式，可搜索、可自测、可按 A4 双栏打印。</p>
       <div class="links">
         <a class="btn primary" href="https://wtsswt.github.io/calculus-cheatsheet/">打开页面<span class="arw">↗</span></a>
         <a class="btn ghost" href="https://github.com/wtsswt/calculus-cheatsheet" aria-label="高等数学必背手册 源代码">源码</a>
@@ -267,7 +248,7 @@
       <div class="card-top"><span class="idx">03</span><span class="cat">图形</span></div>
       <h2>元球液体</h2>
       <p class="en">Metaball Liquid</p>
-      <p class="desc">用「软膜、雾团、阈值刀」三个直觉讲清元球液体为什么融合、边缘为什么必须模糊：每像素累加所有球的浓度场，再用一条阈值线切出边界。可拖动搅拌、点击加一滴，参数实时生效。</p>
+      <p class="desc">可拖动的 WebGL 元球液体：浓度场叠加，再用一条阈值线切出边缘。</p>
       <div class="links">
         <a class="btn primary" href="https://wtsswt.github.io/metaball-liquid/">打开页面<span class="arw">↗</span></a>
         <a class="btn ghost" href="https://github.com/wtsswt/metaball-liquid" aria-label="元球液体 源代码">源码</a>
@@ -278,7 +259,7 @@
       <div class="card-top"><span class="idx">04</span><span class="cat">图形</span></div>
       <h2>截面实验室</h2>
       <p class="en">Section Lab</p>
-      <p class="desc">用平面去切立体：多面体按棱线求交，回转体按解析曲线求交，实时给出截面真形、截交线类型与判据（圆 / 椭圆 / 抛物线 / 双曲线），并能导出第一角投影三视图。</p>
+      <p class="desc">用平面切立体，实时给出截面真形与截交线类型，可导出三视图。</p>
       <div class="links">
         <a class="btn primary" href="https://wtsswt.github.io/section-lab/">打开页面<span class="arw">↗</span></a>
         <a class="btn ghost" href="https://github.com/wtsswt/section-lab" aria-label="截面实验室 源代码">源码</a>
@@ -289,7 +270,7 @@
       <div class="card-top"><span class="idx">05</span><span class="cat">仿真</span></div>
       <h2>Verlet 沙盒</h2>
       <p class="en">Verlet Sandbox</p>
-      <p class="desc">每帧积一次分，再做四轮约束迭代——手感由约束投影决定，不由受力公式决定。互斥粒子、布料、软体、星系四种模式，推开 / 吸引 / 涡旋 / 拖拽 / 连线五种鼠标工具。</p>
+      <p class="desc">位置级约束求解的粒子沙盒：四种模式、五种鼠标工具。</p>
       <div class="links">
         <a class="btn primary" href="https://wtsswt.github.io/verlet-sandbox/">打开页面<span class="arw">↗</span></a>
         <a class="btn ghost" href="https://github.com/wtsswt/verlet-sandbox" aria-label="Verlet 沙盒 源代码">源码</a>
@@ -300,7 +281,7 @@
       <div class="card-top"><span class="idx">06</span><span class="cat">工具</span></div>
       <h2>体测成绩计算器</h2>
       <p class="en">PE Score Calculator</p>
-      <p class="desc">内置《国家学生体质健康标准（2014 年修订）》与北京市九年级现场考试两套评分表，覆盖小学一年级至大学四年级共 16 个年级。录入单项成绩即折算标准分、附加分与等级，每项得分都能回溯到具体档位。</p>
+      <p class="desc">国家体质标准与北京中考两套评分表，录入单项成绩即得总分与等级。</p>
       <div class="links">
         <a class="btn primary" href="https://wtsswt.github.io/pe-score-calculator/">打开页面<span class="arw">↗</span></a>
         <a class="btn ghost" href="https://github.com/wtsswt/pe-score-calculator" aria-label="体测成绩计算器 源代码">源码</a>
@@ -311,7 +292,7 @@
       <div class="card-top"><span class="idx">07</span><span class="cat">工具</span></div>
       <h2>身体运动功能课程成绩计算器</h2>
       <p class="en">CAU PE Course Calculator</p>
-      <p class="desc">中国农业大学 2026—2027 秋季学期课程算分：思政、理论、体测、专项、课外活动五部分合计 100 分，附不及格红线提示与全部评分细则。填写内容存在本机浏览器，刷新不丢。</p>
+      <p class="desc">中国农业大学 2026—2027 秋季学期体育课程五部分算分，含不及格红线提示。</p>
       <div class="links">
         <a class="btn primary" href="https://wtsswt.github.io/cau-freshman-pe-score-calculator/">打开页面<span class="arw">↗</span></a>
         <a class="btn ghost" href="https://github.com/wtsswt/cau-freshman-pe-score-calculator" aria-label="身体运动功能课程成绩计算器 源代码">源码</a>
@@ -322,7 +303,7 @@
       <div class="card-top"><span class="idx">08</span><span class="cat">工具</span></div>
       <h2>座位轮换脚本</h2>
       <p class="en">Seats Rotation 50 / 51</p>
-      <p class="desc">两套固定教室布局（50 座 8×7、51 座 7×8）的 Excel 座位轮换：以一张初始表为起点，按置换规则逐轮复制并生成新工作表，一次跑 100 轮，替代人工重排。Python + openpyxl，无在线页面。</p>
+      <p class="desc">两套教室布局的 Excel 座位轮换脚本，一次生成 100 轮。</p>
       <div class="links">
         <a class="btn primary" href="https://github.com/wtsswt/seats-rotation-50-51">查看仓库<span class="arw">↗</span></a>
       </div>
@@ -331,7 +312,6 @@
   </section>
 
   <footer class="foot">
-    <p class="note">全部项目托管于 <a href="https://github.com/wtsswt?tab=repositories">GitHub @wtsswt</a>，页面可直接查看源码与提交记录。</p>
     <p class="sign">© 2026 swt · AI 辅助生成</p>
   </footer>
 
