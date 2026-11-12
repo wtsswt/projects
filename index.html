@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>公开项目 · wtsswt</title>
+<meta name="description" content="wtsswt 的公开项目索引：数学可视化、图形与仿真实验、课程与成绩计算工具。全部单文件、零依赖。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f8f86'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23fff' text-anchor='middle'%3Ew%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --paper:#f7f7f5;
+    --card:#ffffff;
+    --ink:#14171a;
+    --ink-2:#4a4f55;
+    --faint:#6a6a64;
+    --line:#e4e4de;
+    --line-strong:#cfcfc7;
+    --accent:#0f8f86;
+    --accent-ink:#0a6b64;
+    --accent-soft:#e8f5f3;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --r:10px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:clamp(14.5px,.28vw + 13.9px,16px);
+    line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:inherit}
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 clamp(16px,4vw,40px) clamp(40px,6vw,72px);
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{padding:clamp(30px,5.4vw,64px) 0 clamp(22px,3vw,34px)}
+  .meta{
+    display:flex;align-items:center;gap:12px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--faint);
+    margin-bottom:clamp(20px,3.4vw,36px);
+  }
+  .meta .bar{flex:1;height:1px;background:var(--line-strong)}
+  h1{
+    margin:0;
+    font-size:clamp(2.05rem,5vw + .55rem,3.5rem);
+    line-height:1.06;
+    letter-spacing:-.022em;
+    font-weight:650;
+    text-wrap:balance;
+  }
+  h1 .en{
+    display:block;
+    margin-top:clamp(10px,1.4vw,14px);
+    font-family:var(--mono);
+    font-size:clamp(11px,1.05vw,12.5px);
+    font-weight:500;
+    letter-spacing:.26em;
+    color:var(--faint);
+  }
+  .lede{
+    margin:clamp(16px,2.2vw,22px) 0 0;
+    max-width:56ch;
+    color:var(--ink-2);
+    font-size:clamp(14.5px,.5vw + 13.4px,17px);
+    line-height:1.72;
+  }
+  .stats{
+    display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;
+    margin-top:clamp(20px,2.6vw,26px);
+    font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    color:var(--faint);
+  }
+  .stats b{color:var(--ink);font-weight:600}
+  .stats .dot{width:3px;height:3px;border-radius:50%;background:var(--line-strong)}
+
+  /* ---------- filters ---------- */
+  .filters{
+    display:flex;flex-wrap:wrap;gap:8px;
+    padding:clamp(14px,2vw,20px) 0 clamp(16px,2.2vw,24px);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    min-height:44px;padding:0 15px;
+    border:1px solid var(--line-strong);
+    border-radius:999px;
+    background:var(--card);
+    color:var(--ink-2);
+    font-family:inherit;font-size:13.5px;line-height:1;
+    cursor:pointer;
+    transition:background .18s ease,border-color .18s ease,color .18s ease;
+  }
+  .chip .n{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.02em}
+  .chip:hover{border-color:var(--ink-2);color:var(--ink)}
+  .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .chip[aria-pressed="true"] .n{color:rgba(255,255,255,.62)}
+  .chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  /* ---------- grid ---------- */
+  .grid{
+    display:grid;gap:clamp(14px,1.7vw,20px);
+    grid-template-columns:1fr;
+    padding-top:clamp(20px,2.8vw,30px);
+  }
+  @media (min-width:768px){ .grid{grid-template-columns:repeat(2,1fr)} }
+  @media (min-width:1024px){ .grid{grid-template-columns:repeat(3,1fr)} }
+
+  .card{
+    display:flex;flex-direction:column;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    padding:clamp(18px,2vw,24px);
+    transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+  }
+  .card[hidden]{display:none}
+  .card:hover{
+    border-color:rgba(15,143,134,.42);
+    box-shadow:0 6px 22px -14px rgba(20,23,26,.35);
+    transform:translateY(-2px);
+  }
+  .card-top{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    margin-bottom:clamp(14px,1.8vw,18px);
+  }
+  .idx{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+    color:var(--faint);
+  }
+  .cat{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-ink);
+    background:var(--accent-soft);
+    border-radius:999px;
+    padding:4px 9px;
+    white-space:nowrap;
+  }
+  .card h2{
+    margin:0;
+    font-size:clamp(17px,.55vw + 15.6px,19.5px);
+    line-height:1.35;
+    letter-spacing:-.01em;
+    font-weight:640;
+    text-wrap:balance;
+  }
+  .card .en{
+    margin:6px 0 0;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--faint);
+  }
+  .card .desc{
+    margin:clamp(12px,1.5vw,15px) 0 0;
+    color:var(--ink-2);
+    font-size:clamp(13.6px,.3vw + 13px,14.6px);
+    line-height:1.72;
+  }
+  .links{
+    display:flex;flex-wrap:wrap;gap:10px;
+    margin-top:auto;padding-top:clamp(16px,2vw,20px);
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    min-height:44px;padding:0 16px;
+    border-radius:7px;
+    border:1px solid transparent;
+    font-size:13.5px;line-height:1;
+    text-decoration:none;
+    transition:background .18s ease,border-color .18s ease,color .18s ease;
+  }
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn.primary:hover{background:#000}
+  .btn.ghost{background:transparent;border-color:var(--line-strong);color:var(--ink-2)}
+  .btn.ghost:hover{border-color:var(--ink-2);color:var(--ink)}
+  .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .btn .arw{font-size:12px;opacity:.72}
+
+  /* ---------- footer ---------- */
+  .foot{
+    margin-top:clamp(34px,4.6vw,54px);
+    padding-top:clamp(18px,2.4vw,22px);
+    border-top:1px solid var(--line);
+  }
+  .foot .note{
+    margin:0 0 10px;
+    font-size:13px;
+    color:var(--ink-2);
+  }
+  .foot .note a{
+    color:var(--accent-ink);
+    text-decoration:none;
+    border-bottom:1px solid rgba(15,143,134,.32);
+  }
+  .foot .note a:hover{border-bottom-color:var(--accent)}
+  .sign{
+    margin:0;
+    font-size:12px;
+    line-height:1.6;
+    color:var(--faint);
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+    .card:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="masthead">
+    <div class="meta"><span>Index</span><span class="bar"></span><span>2026</span></div>
+    <h1>公开项目<span class="en">Public Projects</span></h1>
+    <p class="lede">数学可视化、图形与仿真实验、课程与成绩计算工具。每个项目都是单文件网页或独立脚本，零依赖、无构建，双击就能跑，断网照常使用。</p>
+    <div class="stats">
+      <span><b>8</b> 个项目</span><span class="dot"></span>
+      <span><b>7</b> 个在线可用</span><span class="dot"></span>
+      <span>全部零依赖</span><span class="dot"></span>
+      <span>最近更新 2026-11-12</span>
+    </div>
+  </header>
+
+  <nav class="filters" aria-label="按类别筛选">
+    <button class="chip" type="button" data-filter="all" aria-pressed="true">全部<span class="n">8</span></button>
+    <button class="chip" type="button" data-filter="math" aria-pressed="false">数学<span class="n">2</span></button>
+    <button class="chip" type="button" data-filter="graph" aria-pressed="false">图形<span class="n">2</span></button>
+    <button class="chip" type="button" data-filter="sim" aria-pressed="false">仿真<span class="n">1</span></button>
+    <button class="chip" type="button" data-filter="tools" aria-pressed="false">工具<span class="n">3</span></button>
+  </nav>
+
+  <section class="grid" id="grid" aria-live="polite">
+
+    <article class="card" data-cat="math">
+      <div class="card-top"><span class="idx">01</span><span class="cat">数学</span></div>
+      <h2>泰勒逼近</h2>
+      <p class="en">Taylor Lab</p>
+      <p class="desc">六个基本展开、任意展开点与 0—80 阶。对数刻度的误差面板把「展开点处最小、向外指数增长」画出来，收敛半径在边界上标好。当前配置写进链接，翻车现场可以直接发给别人。</p>
+      <div class="links">
+        <a class="btn primary" href="https://wtsswt.github.io/taylor-lab/">打开页面<span class="arw">↗</span></a>
+        <a class="btn ghost" href="https://github.com/wtsswt/taylor-lab" aria-label="泰勒逼近 源代码">源码</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="math">
+      <div class="card-top"><span class="idx">02</span><span class="cat">数学</span></div>
+      <h2>高等数学必背手册</h2>
+      <p class="en">Calculus Cheatsheet</p>
+      <p class="desc">六章 47 张卡片、347 条公式：极限与无穷小、导数与微分、泰勒公式、不定积分、三角公式全表。按 <span style="font-family:var(--mono)">/</span> 搜索定位，自测模式把公式全部模糊、点击逐条揭示，⌘P 按 A4 双栏打印。</p>
+      <div class="links">
+        <a class="btn primary" href="https://wtsswt.github.io/calculus-cheatsheet/">打开页面<span class="arw">↗</span></a>
+        <a class="btn ghost" href="https://github.com/wtsswt/calculus-cheatsheet" aria-label="高等数学必背手册 源代码">源码</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="graph">
+      <div class="card-top"><span class="idx">03</span><span class="cat">图形</span></div>
+      <h2>元球液体</h2>
+      <p class="en">Metaball Liquid</p>
+      <p class="desc">用「软膜、雾团、阈值刀」三个直觉讲清元球液体为什么融合、边缘为什么必须模糊：每像素累加所有球的浓度场，再用一条阈值线切出边界。可拖动搅拌、点击加一滴，参数实时生效。</p>
+      <div class="links">
+        <a class="btn primary" href="https://wtsswt.github.io/metaball-liquid/">打开页面<span class="arw">↗</span></a>
+        <a class="btn ghost" href="https://github.com/wtsswt/metaball-liquid" aria-label="元球液体 源代码">源码</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="graph">
+      <div class="card-top"><span class="idx">04</span><span class="cat">图形</span></div>
+      <h2>截面实验室</h2>
+      <p class="en">Section Lab</p>
+      <p class="desc">用平面去切立体：多面体按棱线求交，回转体按解析曲线求交，实时给出截面真形、截交线类型与判据（圆 / 椭圆 / 抛物线 / 双曲线），并能导出第一角投影三视图。</p>
+      <div class="links">
+        <a class="btn primary" href="https://wtsswt.github.io/section-lab/">打开页面<span class="arw">↗</span></a>
+        <a class="btn ghost" href="https://github.com/wtsswt/section-lab" aria-label="截面实验室 源代码">源码</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="sim">
+      <div class="card-top"><span class="idx">05</span><span class="cat">仿真</span></div>
+      <h2>Verlet 沙盒</h2>
+      <p class="en">Verlet Sandbox</p>
+      <p class="desc">每帧积一次分，再做四轮约束迭代——手感由约束投影决定，不由受力公式决定。互斥粒子、布料、软体、星系四种模式，推开 / 吸引 / 涡旋 / 拖拽 / 连线五种鼠标工具。</p>
+      <div class="links">
+        <a class="btn primary" href="https://wtsswt.github.io/verlet-sandbox/">打开页面<span class="arw">↗</span></a>
+        <a class="btn ghost" href="https://github.com/wtsswt/verlet-sandbox" aria-label="Verlet 沙盒 源代码">源码</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="tools">
+      <div class="card-top"><span class="idx">06</span><span class="cat">工具</span></div>
+      <h2>体测成绩计算器</h2>
+      <p class="en">PE Score Calculator</p>
+      <p class="desc">内置《国家学生体质健康标准（2014 年修订）》与北京市九年级现场考试两套评分表，覆盖小学一年级至大学四年级共 16 个年级。录入单项成绩即折算标准分、附加分与等级，每项得分都能回溯到具体档位。</p>
+      <div class="links">
+        <a class="btn primary" href="https://wtsswt.github.io/pe-score-calculator/">打开页面<span class="arw">↗</span></a>
+        <a class="btn ghost" href="https://github.com/wtsswt/pe-score-calculator" aria-label="体测成绩计算器 源代码">源码</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="tools">
+      <div class="card-top"><span class="idx">07</span><span class="cat">工具</span></div>
+      <h2>身体运动功能课程成绩计算器</h2>
+      <p class="en">CAU PE Course Calculator</p>
+      <p class="desc">中国农业大学 2026—2027 秋季学期课程算分：思政、理论、体测、专项、课外活动五部分合计 100 分，附不及格红线提示与全部评分细则。填写内容存在本机浏览器，刷新不丢。</p>
+      <div class="links">
+        <a class="btn primary" href="https://wtsswt.github.io/cau-freshman-pe-score-calculator/">打开页面<span class="arw">↗</span></a>
+        <a class="btn ghost" href="https://github.com/wtsswt/cau-freshman-pe-score-calculator" aria-label="身体运动功能课程成绩计算器 源代码">源码</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="tools">
+      <div class="card-top"><span class="idx">08</span><span class="cat">工具</span></div>
+      <h2>座位轮换脚本</h2>
+      <p class="en">Seats Rotation 50 / 51</p>
+      <p class="desc">两套固定教室布局（50 座 8×7、51 座 7×8）的 Excel 座位轮换：以一张初始表为起点，按置换规则逐轮复制并生成新工作表，一次跑 100 轮，替代人工重排。Python + openpyxl，无在线页面。</p>
+      <div class="links">
+        <a class="btn primary" href="https://github.com/wtsswt/seats-rotation-50-51">查看仓库<span class="arw">↗</span></a>
+      </div>
+    </article>
+
+  </section>
+
+  <footer class="foot">
+    <p class="note">全部项目托管于 <a href="https://github.com/wtsswt?tab=repositories">GitHub @wtsswt</a>，页面可直接查看源码与提交记录。</p>
+    <p class="sign">© 2026 swt · AI 辅助生成</p>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var f = chip.dataset.filter;
+      chips.forEach(function (c) {
+        var on = c === chip;
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      cards.forEach(function (card) {
+        card.hidden = !(f === 'all' || card.dataset.cat === f);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
