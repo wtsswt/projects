@@ -50,8 +50,23 @@
     margin-bottom:clamp(20px,3.4vw,36px);
   }
   .meta .bar{flex:1;height:1px;background:var(--line-strong)}
-  .meta a{color:var(--faint);text-decoration:none;border-bottom:1px solid transparent}
-  .meta a:hover{color:var(--ink-2);border-bottom-color:var(--line-strong)}
+  .head-row{
+    display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+    gap:clamp(16px,2.4vw,26px) 32px;
+  }
+  .gh-link{
+    display:inline-flex;align-items:center;gap:7px;
+    min-height:44px;padding:0 18px;
+    border:1px solid var(--ink);
+    border-radius:7px;
+    color:var(--ink);
+    font-size:13.5px;line-height:1;text-decoration:none;white-space:nowrap;
+    flex-shrink:0;
+    transition:background .18s ease,color .18s ease;
+  }
+  .gh-link:hover{background:var(--ink);color:#fff}
+  .gh-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .gh-link .arw{font-size:12px;opacity:.7}
   h1{
     margin:0;
     font-size:clamp(2.05rem,5vw + .55rem,3.5rem);
@@ -170,6 +185,20 @@
   .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .btn .arw{font-size:12px;opacity:.72}
 
+  /* ---------- star ---------- */
+  .star{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:12px 24px;
+    margin-top:clamp(28px,4vw,40px);
+    padding:clamp(16px,2.1vw,20px) clamp(18px,2.4vw,24px);
+    background:var(--card);
+    border:1px solid var(--line-strong);
+    border-radius:var(--r);
+  }
+  .star p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+  .star p b{color:var(--ink);font-weight:600}
+  .star .btn{flex-shrink:0}
+
   /* ---------- footer ---------- */
   .foot{
     margin-top:clamp(34px,4.6vw,54px);
@@ -193,8 +222,11 @@
 <main class="wrap">
 
   <header class="masthead">
-    <div class="meta"><span>Index</span><span class="bar"></span><a href="https://github.com/wtsswt?tab=repositories">GitHub @wtsswt</a></div>
-    <h1>公开项目<span class="en">Public Projects</span></h1>
+    <div class="meta"><span>Index</span><span class="bar"></span><span>2026</span></div>
+    <div class="head-row">
+      <h1>公开项目<span class="en">Public Projects</span></h1>
+      <a class="gh-link" href="https://github.com/wtsswt">GitHub 主页<span class="arw">↗</span></a>
+    </div>
     <div class="stats">
       <span><b>8</b> 个项目</span><span class="dot"></span>
       <span><b>7</b> 个在线可用</span>
@@ -298,6 +330,11 @@
       </div>
     </article>
 
+  </section>
+
+  <section class="star" aria-label="给项目点 Star">
+    <p>如果这些工具有用，<b>给我点个 Star</b> 吧。</p>
+    <a class="btn primary" href="https://github.com/wtsswt?tab=repositories">去 GitHub 点 Star<span class="arw">↗</span></a>
   </section>
 
   <footer class="foot">
