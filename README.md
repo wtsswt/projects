@@ -17,6 +17,7 @@
 | [pe-score-calculator](https://github.com/wtsswt/pe-score-calculator) | 工具 | [打开](https://wtsswt.github.io/pe-score-calculator/) |
 | [cau-freshman-pe-score-calculator](https://github.com/wtsswt/cau-freshman-pe-score-calculator) | 工具 | [打开](https://wtsswt.github.io/cau-freshman-pe-score-calculator/) |
 | [seats-rotation-50-51](https://github.com/wtsswt/seats-rotation-50-51) | 工具 | —（Python 脚本） |
+| [minimal-clock](https://github.com/wtsswt/minimal-clock) | 工具 | [打开](https://wtsswt.github.io/minimal-clock/) |
 | [helix-jump](https://github.com/wtsswt/helix-jump) | 游戏 | [打开](https://wtsswt.github.io/helix-jump/) |
 
 ## 维护
