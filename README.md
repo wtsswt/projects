@@ -14,6 +14,7 @@
 | [section-lab](https://github.com/wtsswt/section-lab) | 图形 | [打开](https://wtsswt.github.io/section-lab/) |
 | [verlet-sandbox](https://github.com/wtsswt/verlet-sandbox) | 仿真 | [打开](https://wtsswt.github.io/verlet-sandbox/) |
 | [physics-playground](https://github.com/wtsswt/physics-playground) | 仿真 | [打开](https://wtsswt.github.io/physics-playground/) |
+| [cau-quick-lookup](https://github.com/wtsswt/cau-quick-lookup) | 工具 | [打开](https://wtsswt.github.io/cau-quick-lookup/) |
 | [pe-score-calculator](https://github.com/wtsswt/pe-score-calculator) | 工具 | [打开](https://wtsswt.github.io/pe-score-calculator/) |
 | [cau-freshman-pe-score-calculator](https://github.com/wtsswt/cau-freshman-pe-score-calculator) | 工具 | [打开](https://wtsswt.github.io/cau-freshman-pe-score-calculator/) |
 | [seats-rotation-50-51](https://github.com/wtsswt/seats-rotation-50-51) | 工具 | —（Python 脚本） |
